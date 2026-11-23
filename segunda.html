@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Burger - Menú para Pedir</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+ <header class="header-compacto">
+    <div class="header-contenido">
+      <div class="header-izq">
+        <div class="titulos-marca">
+          <h1>Stock Burger</h1>
+          <p class="subtitulo">Hay hambre? Hay stock.</p>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="PRIMERA.HTML">Inicio</a></li>
+            <li><a href="segunda.html">Menú</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    
+      <a href="https://instagram.com/stockburgerrr" target="_blank" rel="noopener" class="btn-ig-header" aria-label="Seguinos en Instagram">
+        <img src="../img/instagram-8.png" alt="Instagram Stock Burger">
+      </a>
+    </div>
+
+    
+    <img src="../img/logo-8.png" alt="Logo Stock Burger" class="logo-sticker">
+  </header>
+
+  <main>
+    <section class="intro-menu">
+      <h2>Nuestro Menú</h2>
+      <p>Elegí tu combo y hacé clic en pedir para enviarnos tu orden directo por WhatsApp, o probá suerte en nuestras ruletas más abajo.</p>
+      
+      <figure class="destacado-menu">
+        <img src="../img/menu.png" alt="Hamburguesa doble carne smash con queso cheddar fundido, panceta crocante y papas fritas" width="450">
+        <figcaption>Especialidad de la casa: Doble Bacon Cheddar con papas.</figcaption>
+      </figure>
+    </section>
+
+    <section class="grilla-menu combos-centrados">
+      <h3>Combos Disponibles</h3>
+
+      <!-- COMBO 1 -->
+      <article class="item-menu">
+        <img src="../IMG/combo doble-8.png" alt="Combo 2 Doble Bacon" class="foto-burger">
+        <div class="info-burger">
+          <h4>1. Promo Doble Bacon</h4>
+          <ul>
+            <li>2 Dobles Bacon smash</li>
+            <li>2 Dips de cheddar fundido</li>
+            <li>2 Coca-Colas 354 ml</li>
+          </ul>
+          <a href="https://wa.me/5491122783946?text=Hola%20Stock%20Burger!%20Quiero%20pedir%20la%20Promo%20Doble%20Bacon" target="_blank" rel="noopener" class="btn-wsp">Pedir este combo</a>
+        </div>
+      </article>
+
+      <!-- COMBO 2 -->
+      <article class="item-menu">
+        <img src="../IMG/combo individual-8.png" alt="Combo cheese individual" class="foto-burger">
+        <div class="info-burger">
+          <h4>2. Promo cheese Individual</h4>
+          <ul>
+            <li>Doble medallón smash</li>
+            <li>Doble cheddar</li>
+            <li>Dip de cheddar cheddar</li>
+            <li>1 Coca-Cola 354 ml</li>
+            
+          </ul>
+          <a href="https://wa.me/5491122783946?text=Hola%20Stock%20Burger!%20Quiero%20pedir%20la%20Cl%C3%A1sica%20Stock" target="_blank" rel="noopener" class="btn-wsp">Pedir este combo</a>
+        </div>
+      </article>
+
+      <!-- COMBO 3 -->
+      <article class="item-menu">
+        <img src="../IMG/combo trio-8.png" alt="Combo Trio Sock" class="foto-burger">
+        <div class="info-burger">
+          <h4>3. Combo trio stock</h4>
+          <ul>
+            <li>3 simples a eleccion</li>
+            <li>con papas fritas</li>
+            
+          </ul>
+          <a href="https://wa.me/5491122783946?text=Hola%20Stock%20Burger!%20Quiero%20pedir%20la%20Triple%20Cheddar%20Smash" target="_blank" rel="noopener" class="btn-wsp">Pedir este combo</a>
+        </div>
+      </article>
+    </section>
+      
+    </section>
+
+    <section class="seccion-ruleta">
+      <h2>🎰 ¿No sé qué pedir?</h2>
+      <p>Si no te decidís entre los combos, girá las dos ruletas: la primera elige tu hamburguesa y la segunda define si te llevás un beneficio extra.</p>
+
+      <!-- Contenedor donde p5.js inserta el canvas -->
+      <div id="contenedor-canvas"></div>
+
+      <!-- Panel de controles y estado persistente -->
+      <div class="panel-juego" data-estado="esperando">
+        <div class="controles-audio-juego">
+          <button type="button" id="btn-girar" class="btn-girar">¡Girar Ruletas!</button>
+        </div>
+        <p id="resultado-texto" class="resultado-texto">Presioná el botón para probar tu suerte.</p>
+        <a id="btn-reclamar" href="#" target="_blank" rel="noopener" class="btn-reclamar oculto">Reclamar combo por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Stock Burger · Trujui, Moreno · <a href="PRIMERA.HTML">Volver al inicio</a></p>
+  </footer>
+
+  <!-- Carga ordenada: 1° p5.js, 2° lógica DOM/Audio, 3° sketch de las ruletas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/sketch.js"></script>
+
+</body>
+</html>

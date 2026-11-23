@@ -1,0 +1,576 @@
+/* 
+   VARIABLES Y ESTÉTICA STOCK BURGER
+*/
+:root {
+  --bg-principal: #ffffff;
+  --bg-secundario: #f7f7f8;
+  --rojo-marca: #ba0909;
+  --rojo-oscuro: #8f0606;
+  --cian-acento: #00a8e8;
+  --cian-oscuro: #0082b4;
+  --texto-oscuro: #18181b;
+  --texto-gris: #52525b;
+  --borde-suave: #e4e4e7;
+  --verde-wsp: #16a34a;
+  --sombra-card: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --radio: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-principal);
+  color: var(--texto-oscuro);
+  line-height: 1.5;
+}
+
+/* =========================================
+   HEADER COMPACTO + LOGO STICKER
+   ========================================= */
+header.header-compacto {
+  background-color: var(--bg-principal);
+  border-bottom: 3px solid var(--rojo-marca);
+  padding: 2.0rem 2.25rem; 
+  position: relative; 
+  margin-bottom: 2.8rem; /* Espacio para que el sticker sobresalga sin tapar el título */
+}
+
+/* =========================================
+   HEADER CENTRADO + LOGO STICKER + IG DERECHA
+   ========================================= */
+.header-contenido {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Centra el bloque de texto y botones */
+  align-items: center;
+  position: relative;
+  padding: 0.25rem 3rem; /* Espacio lateral para que en móvil no pise el logo ni IG */
+}
+
+.header-izq {
+  display: flex;
+  flex-direction: column; /* Apila: arriba título+frase, abajo los botones */
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fijamos el botón de Instagram a la derecha sin que empuje el centro */
+.btn-ig-header {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.btn-ig-header:hover {
+  transform: translateY(-50%) scale(1.12) rotate(4deg);
+}
+
+/* Ajuste responsivo para celulares */
+@media (max-width: 680px) {
+  .header-contenido {
+    padding-left: 4.5rem; /* Despeja el logo sticker en pantallas chicas */
+    padding-right: 2.75rem;
+  }
+
+  .logo-sticker {
+    width: 72px;
+    bottom: -28px;
+    left: 0.75rem;
+  }
+}
+
+header h1 {
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 900;
+  color: var(--rojo-marca);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.subtitulo {
+  color: var(--texto-gris);
+  font-size: 0.82rem;
+  margin-top: 0.15rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--texto-oscuro);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 2px solid var(--borde-suave);
+  transition: all 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  border-color: var(--rojo-marca);
+  background-color: var(--rojo-marca);
+  color: #ffffff;
+}
+
+
+.btn-ig-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-ig-header img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+.btn-ig-header:hover {
+  transform: scale(1.12) rotate(4deg);
+}
+
+/* Logo flotante al doble de tamaño (184px) montado entre header y body */
+.logo-sticker {
+  position: absolute;
+  left: max(1rem, calc((100vw - 1080px) / 2 + 1rem));
+  bottom: -75px; /* Baja la mitad de su altura para seguir montado sobre la línea */
+  width: 184px;  /* Exactamente el doble de los 92px anteriores */
+  height: auto;
+  z-index: 20;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 0 3px #ffffff)
+          drop-shadow(0 0 3px #ffffff)
+          drop-shadow(0 6px 14px rgba(0, 0, 0, 0.24));
+  pointer-events: none;
+}
+
+/* Aumentamos un poco el margen inferior del header para que no pise el contenido de abajo */
+header.header-compacto {
+  margin-bottom: 4.5rem;
+}
+
+/* Ajuste responsivo para celulares (también al doble que antes: 130px) */
+@media (max-width: 680px) {
+  .header-contenido {
+    padding-left: 7.5rem; /* Despeja el logo más grande en pantallas chicas */
+    padding-right: 2.75rem;
+  }
+
+  .logo-sticker {
+    width: 130px;
+    bottom: -52px;
+    left: 0.5rem;
+  }
+}
+
+/* =========================================
+   GRILLA DE 6 HAMBURGUESAS (3 FILAS x 2 COLUMNAS)
+   ========================================= */
+.grilla-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas exactas -> 6 items = 3 filas */
+  gap: 1.75rem;
+}
+
+.grilla-menu h3 {
+  grid-column: 1 / -1;
+  font-size: 1.35rem;
+  color: var(--rojo-marca);
+  border-left: 4px solid var(--cian-acento);
+  padding-left: 0.75rem;
+}
+
+.item-menu {
+  background: var(--bg-principal);
+  border: 2px solid var(--borde-suave);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--sombra-card);
+  transition: transform 0.25s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+/* Leves rotaciones alternadas entre columnas */
+.item-menu:nth-of-type(odd) {
+  transform: rotate(-1.3deg);
+}
+
+.item-menu:nth-of-type(even) {
+  transform: rotate(1.3deg);
+}
+
+/* Al pasar el mouse se endereza y resalta */
+.item-menu:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.01);
+  border-color: var(--rojo-marca);
+  box-shadow: 0 10px 24px rgba(186, 9, 9, 0.12);
+  z-index: 5;
+}
+
+/* PNG de cada hamburguesa con sombra real debajo */
+.foto-burger {
+  width: 185px;
+  height: 155px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.16));
+  transition: transform 0.25s ease;
+}
+
+.item-menu:hover .foto-burger {
+  transform: scale(1.06);
+}
+
+.info-burger {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.item-menu h4 {
+  font-size: 1.15rem;
+  color: var(--texto-oscuro);
+  margin-bottom: 0.6rem;
+}
+
+.item-menu ul {
+  list-style: none;
+  padding: 0;
+  color: var(--texto-gris);
+  font-size: 0.9rem;
+  margin-bottom: 1.15rem;
+}
+
+.item-menu li {
+  margin-bottom: 0.25rem;
+}
+
+/* =========================================
+   ADAPTACIÓN RESPONSIVA PARA CELULARES
+   ========================================= */
+@media (max-width: 680px) {
+  .header-contenido {
+    padding-left: 78px;
+  }
+
+  .logo-sticker {
+    width: 72px;
+    bottom: -28px;
+    left: 0.75rem;
+  }
+
+  /* En pantallas chicas pasa a 1 columna para que no se apriete el texto */
+  .grilla-menu {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL Y SECCIONES
+   ========================================= */
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--texto-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   INTRO Y DESTACADO DEL MENÚ
+   ========================================= */
+.intro-menu {
+  text-align: center;
+}
+
+.intro-menu p {
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+  color: var(--texto-gris);
+}
+
+.destacado-menu {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--bg-secundario);
+  padding: 0.75rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde-suave);
+}
+
+.destacado-menu img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.destacado-menu figcaption {
+  font-size: 0.85rem;
+  color: var(--texto-gris);
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* =========================================
+   GRILLA DE COMBOS (RESPONSIVA)
+   ========================================= */
+.grilla-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.grilla-menu h3 {
+  grid-column: 1 / -1;
+  font-size: 1.35rem;
+  color: var(--rojo-marca);
+  border-left: 4px solid var(--cian-acento);
+  padding-left: 0.75rem;
+}
+
+.item-menu {
+  background: var(--bg-principal);
+  border: 2px solid var(--borde-suave);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--sombra-card);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.item-menu:hover {
+  transform: translateY(-3px);
+  border-color: var(--rojo-marca);
+}
+
+.item-menu h4 {
+  font-size: 1.15rem;
+  color: var(--texto-oscuro);
+  margin-bottom: 0.75rem;
+}
+
+.item-menu ul {
+  padding-left: 1.1rem;
+  color: var(--texto-gris);
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+}
+
+.item-menu li {
+  margin-bottom: 0.3rem;
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn-wsp,
+.btn-reclamar {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--verde-wsp);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-wsp:hover,
+.btn-reclamar:hover {
+  background-color: #15803d;
+}
+
+/* =========================================
+   SECCIÓN RULETAS P5.JS
+   ========================================= */
+.seccion-ruleta {
+  background: var(--bg-secundario);
+  border: 2px solid var(--borde-suave);
+  border-top: 5px solid var(--cian-acento);
+  border-radius: var(--radio);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.seccion-ruleta > p {
+  max-width: 600px;
+  margin: 0 auto 1.25rem auto;
+  color: var(--texto-gris);
+}
+
+#contenedor-canvas {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 1.25rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenedor-canvas canvas {
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-card);
+  background: #ffffff;
+}
+
+.controles-audio-juego {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.btn-girar {
+  background-color: var(--rojo-marca);
+  color: #ffffff;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 0.8rem 1.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(186, 9, 9, 0.3);
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.btn-girar:hover:not(:disabled) {
+  background-color: var(--rojo-oscuro);
+  transform: scale(1.03);
+}
+
+.btn-girar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-silenciar {
+  background-color: #ffffff;
+  color: var(--texto-oscuro);
+  border: 2px solid var(--cian-acento);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-silenciar[aria-pressed="true"] {
+  border-color: var(--texto-gris);
+  color: var(--texto-gris);
+  background-color: #f4f4f5;
+}
+
+.resultado-texto {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+}
+
+/* Estados visuales dinámicos manipulados por JS */
+.panel-juego[data-estado="gano"] .resultado-texto {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.panel-juego[data-estado="sin-premio"] .resultado-texto {
+  background-color: #e0f2fe;
+  color: #075985;
+  border: 1px solid #7dd3fc;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--borde-suave);
+  color: var(--texto-gris);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--rojo-marca);
+  font-weight: 700;
+  text-decoration: none;
+}
+/* Centrado del bloque de 3 combos y ajuste de flyer PNG */
+.combos-centrados {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.combos-centrados .foto-burger {
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+}
